@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const message = messageInput.value;
         if (message) {
             // Display the message in chat window
-            chatWindow.innerHTML += <div class="message sent">${message}</div>;
+            chatWindow.innerHTML += `<div class="message sent">${message}</div>`; // Corrected string
             messageInput.value = '';
             
             // Convert text to speech
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     recognition.onresult = event => {
         const transcript = event.results[0][0].transcript;
-        chatWindow.innerHTML += <div class="message received">${transcript}</div>;
+        chatWindow.innerHTML += `<div class="message received">${transcript}</div>`; // Corrected string
         speakMessage(transcript); // Optional: Convert received message to speech
     };
 
